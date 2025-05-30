@@ -1,7 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 Route::get('/', function () {
-    return view('welcome');
+    $name="Home Page";
+    $frameworks=[
+'Laravel',
+'Vue',
+'Inertia'
+    ];
+    return Inertia::render('Home',compact('name','frameworks'));
 });
