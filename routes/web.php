@@ -7,7 +7,8 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 Route::get('/users', function () {
-    return Inertia::render('Users');
+    $time=now()->toTimeString();
+    return Inertia::render('Users',compact('time'));
 });
 Route::get('/settings', function () {
     return Inertia::render('Settings');
