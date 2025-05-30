@@ -4,11 +4,11 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    $name="Home Page";
-    $frameworks=[
-'Laravel',
-'Vue',
-'Inertia'
-    ];
-    return Inertia::render('Home',compact('name','frameworks'));
+    return Inertia::render('Home');
+});
+Route::get('/users', function () {
+    return Inertia::render('Users');
+});
+Route::get('/settings', function () {
+    return Inertia::render('Settings');
 });
