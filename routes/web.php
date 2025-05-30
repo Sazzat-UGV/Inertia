@@ -7,12 +7,11 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 Route::get('/users', function () {
-    $time=now()->toTimeString();
-    return Inertia::render('Users',compact('time'));
+    return Inertia::render('Users');
 });
 Route::get('/settings', function () {
     return Inertia::render('Settings');
 });
 Route::post('/logout', function () {
-   dd(request('name'));
+    dd(request('name'));
 });

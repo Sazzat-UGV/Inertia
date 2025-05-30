@@ -1,18 +1,8 @@
 <template>
-    <Nav />
-    <h1 class="text-4xl font-bold">Users</h1>
-    <div class="mt-[700px]">
-        <p>The current time is {{ time }}</p>
-        <Link href="/users" class="text-blue-500 hover:underline" preserve-scroll>Refresh</Link>
-    </div>
+    <Layout>
+    <h1 class="text-3xl">Users</h1>
+    </Layout>
 </template>
 <script setup>
-import { Link } from "@inertiajs/vue3";
-import Nav from "../Components/Nav.vue";
-defineProps({
-    time: {
-        type: String,
-        default: "N/A",
-    },
-});
+import Layout from '../Components/Layout.vue'
 </script>
