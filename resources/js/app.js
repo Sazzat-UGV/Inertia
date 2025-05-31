@@ -1,5 +1,7 @@
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/vue3";
+import NProgress from "nprogress";
+import { router } from "@inertiajs/vue3";
 
 createInertiaApp({
     resolve: (name) => {
@@ -15,6 +17,8 @@ createInertiaApp({
         delay: 250,
         color: "#6B7280",
         includeCSS: true,
-        showSpinner: false,
+         showSpinner: false,
     },
 });
+router.on("start", () => NProgress.start());
+router.on("finish", () => NProgress.done());
