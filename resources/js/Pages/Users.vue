@@ -6,6 +6,10 @@
         <h1 class="text-2xl text-center">Loading...</h1>
         </div>
             <div class="flex flex-col mt-6" v-else>
+            <div class="flex justify-between mb-3">
+            <p class="text-3xl font-semibold">Users</p>
+            <input type="text" v-model="search" placeholder="Search..." class=" w-64 border-2 border-gray-200 px-2 py-1 rounded-lg">
+            </div>
                 <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div
                         class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8"
@@ -88,6 +92,10 @@
 import Pagination from '../Components/Pagination.vue';
 import Layout from "../Components/Layout.vue";
 import { Link } from '@inertiajs/vue3'
+import { Inertia } from '@inertiajs/inertia'
+import { ref,watch } from "vue";
+
+var search=ref('')
 
 defineProps({
     users: {
@@ -95,4 +103,8 @@ defineProps({
         default: [],
     },
 });
+watch(search, value=>{
+    Inertia.get('/users',{search: value});
+    console.log(search.value);
+})
 </script>
