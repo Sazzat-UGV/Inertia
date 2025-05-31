@@ -1,4 +1,5 @@
 <template>
+    <Head title="Users" />
     <Layout>
     <h1 class="text-3xl">Users</h1>
     </Layout>

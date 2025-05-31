@@ -3,7 +3,7 @@
         <header class="flex justify-between items-center">
             <div class="flex items-center">
                 <h1 class="font-bold text-lg">My App</h1>
-                <p class="text-sm font-bold ml-4 border py-1 px-2 rounded-2xl">Welcome {{ $page.props.auth.user.name }} !</p>
+                <p class="text-sm font-bold ml-4 border py-1 px-2 rounded-2xl">Welcome back, {{ $page.props.auth.user.name }} !</p>
             </div>
             <Nav />
         </header>

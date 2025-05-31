@@ -1,6 +1,6 @@
 <template>
     <nav class="">
-        <ul class="flex list-none space-x-4 list-inside">
+        <ul class="flex list-none space-x-6">
             <li class="">
                 <Link
                     class="text-black hover:underline"
