@@ -80,15 +80,15 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-6">
-           paginator
-            </div>
+            <Pagination :links="users.links" class="mt-6" />
         </section>
     </Layout>
 </template>
 <script setup>
+import Pagination from '../Components/Pagination.vue';
 import Layout from "../Components/Layout.vue";
-import { Link } from "@inertiajs/vue3"
+import { Link } from '@inertiajs/vue3'
+
 defineProps({
     users: {
         type: Object,
