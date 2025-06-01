@@ -64,6 +64,7 @@
                 <button
                     type="submit"
                     class="bg-gray-700 text-white rounded py-2 px-5 hover:bg-gray-950 transition-all duration-300"
+                :disabled="form.processing"
                 >
                     Submit
                 </button>
@@ -73,9 +74,9 @@
 </template>
 <script setup>
 import Layout from "@/Components/Layout.vue";
-import { router } from "@inertiajs/vue3";
+import { useForm } from "@inertiajs/vue3";
 import { reactive } from "vue";
-let form = reactive({
+let form = useForm({
     name: "",
     email: "",
     password: "",
@@ -89,6 +90,6 @@ defineProps({
 });
 
 let submit = () => {
-    router.post("/users/create", form);
+    form.post("/users/create");
 };
 </script>
