@@ -75,7 +75,7 @@
                                         <td
                                             class="px-4 py-4 text-sm whitespace-nowrap"
                                         >
-                                            <Link class="font-bold text-indigo-600 hover:text-indigo-900 hover:underline hover:cursor-pointer" href="`/users/${user.id}/edit`">Edit</Link>
+                                            <Link class="font-bold text-gray-600 hover:text-gray-900 hover:underline hover:cursor-pointer" href="`/users/${user.id}/edit`">Edit</Link>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -109,10 +109,11 @@ var search=ref(props.search)
 watch(search, (value) => {
   router.get('/users',
   { search: value },
-   { preserveState: true,
+   {
+    preserveState: true,
     replace: true
    }
 );
-  console.log(search.value);
+//   console.log(search.value);
 });
 </script>
