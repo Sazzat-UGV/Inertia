@@ -91,20 +91,28 @@
 <script setup>
 import Pagination from '../Components/Pagination.vue';
 import Layout from "../Components/Layout.vue";
-import { Link } from '@inertiajs/vue3'
-import { Inertia } from '@inertiajs/inertia'
-import { ref,watch } from "vue";
+import { Link, router  } from '@inertiajs/vue3';
+import { ref, watch } from "vue";
 
-var search=ref('')
 
-defineProps({
+const props=defineProps({
     users: {
         type: Object,
         default: [],
     },
+    search:{
+        type:Object,
+        default: [],
+    }
 });
-watch(search, value=>{
-    Inertia.get('/users',{search: value});
-    console.log(search.value);
-})
+var search=ref(props.search)
+watch(search, (value) => {
+  router.get('/users',
+  { search: value },
+   { preserveState: true,
+    replace: true
+   }
+);
+  console.log(search.value);
+});
 </script>

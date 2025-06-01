@@ -9,10 +9,16 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 Route::get('/users', function (Request $request) {
-    $users=Inertia::defer(function() use($request){
-        return User::where('name','LIKE','%'.$request->search."%")->orWhere('email','LIKE','%',$request->search.'%')->select('id','name','email')->paginate();
-    });
-    return Inertia::render('Users',compact('users'));
+        $search = $request->input('search');
+$users = User::query()
+        ->when($search, function ($query, $search) {
+            $query->where('name', 'LIKE', "%{$search}%")
+                  ->orWhere('email', 'LIKE', "%{$search}%");
+        })
+        ->select('id', 'name', 'email')
+        ->paginate()->withQueryString();
+$search=$request->search;
+    return Inertia::render('Users',compact('users','search'));
 });
 Route::get('/settings', function () {
     return Inertia::render('Settings');

@@ -1,6 +1,6 @@
 import { createApp, h } from "vue";
 import { createInertiaApp, Head } from "@inertiajs/vue3";
-// import NProgress from "nprogress";
+import NProgress from "nprogress";
 import { router } from "@inertiajs/vue3";
 
 createInertiaApp({
