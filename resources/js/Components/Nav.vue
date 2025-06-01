@@ -13,7 +13,7 @@
                 <Link
                     class="text-black hover:underline"
                     :class="{
-                        'font-bold underline': $page.component === 'Users',
+                        'font-bold underline': $page.component === 'Users/Index',
                     }"
                     href="/users"
                     >Users</Link

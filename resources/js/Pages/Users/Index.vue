@@ -8,7 +8,9 @@
             <div class="flex flex-col mt-6" v-else>
             <div class="flex justify-between mb-3">
             <p class="text-3xl font-semibold">Users</p>
+    <div class="flex flex-row gap-2">
             <input type="text" v-model="search" placeholder="Search..." class=" w-64 border-2 border-gray-200 px-2 py-1 rounded-lg">
+            <Link href="users/create" class="bg-gray-700 text-white rounded py-2 px-5 hover:bg-gray-950 transition-all duration-300">Create User</Link></div>
             </div>
                 <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div
@@ -89,8 +91,8 @@
     </Layout>
 </template>
 <script setup>
-import Pagination from '../Components/Pagination.vue';
-import Layout from "../Components/Layout.vue";
+import Pagination from '@/Components/Pagination.vue';
+import Layout from "@/Components/Layout.vue";
 import { Link, router  } from '@inertiajs/vue3';
 import { ref, watch } from "vue";
 
