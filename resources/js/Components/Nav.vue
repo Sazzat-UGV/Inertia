@@ -29,9 +29,9 @@
                     >Settings</Link
                 >
             </li>
-            <!-- <li class="">
+            <li class="">
                 <Link href="/logout" method="post" as="button" :data="{name:'Sarah Moni'}"  class="bg-red-400 px-3 py-1 rounded-full text-white font-bold hover:cursor-pointer">Log out</Link>
-            </li> -->
+            </li>
         </ul>
     </nav>
 </template>

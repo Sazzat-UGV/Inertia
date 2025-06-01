@@ -10,7 +10,7 @@
             <p class="text-3xl font-semibold">Users</p>
     <div class="flex flex-row gap-2">
             <input type="text" v-model="search" placeholder="Search..." class=" w-64 border-2 border-gray-200 px-2 py-1 rounded-lg">
-            <Link href="users/create" class="bg-gray-700 text-white rounded py-2 px-5 hover:bg-gray-950 transition-all duration-300">Create User</Link></div>
+            <Link v-if="can" href="users/create" class="bg-gray-700 text-white rounded py-2 px-5 hover:bg-gray-950 transition-all duration-300">Create User</Link></div>
             </div>
                 <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div
@@ -107,6 +107,10 @@ const props=defineProps({
     search:{
         type:Object,
         default: [],
+    },
+    can:{
+        type:Boolean,
+        default: false,
     }
 });
 var search=ref(props.search)
