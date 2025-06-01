@@ -95,6 +95,8 @@ import Pagination from '@/Components/Pagination.vue';
 import Layout from "@/Components/Layout.vue";
 import { Link, router  } from '@inertiajs/vue3';
 import { ref, watch } from "vue";
+import throttle from 'lodash/throttle';
+
 
 
 const props=defineProps({
@@ -108,14 +110,13 @@ const props=defineProps({
     }
 });
 var search=ref(props.search)
-watch(search, (value) => {
-  router.get('/users',
-  { search: value },
-   {
-    preserveState: true,
-    replace: true
-   }
+watch(
+    search,
+    throttle((value) => {
+        router.get('/users', { search: value }, {
+            preserveState: true,
+            replace: true
+        });
+    }, 500)
 );
-//   console.log(search.value);
-});
 </script>
